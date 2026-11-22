@@ -182,4 +182,39 @@
 <svg class="pj-zodiac pj-z-aries" viewBox="0 0 220 170" role="img" aria-label="白羊座裝飾星圖"><polyline points="25,42 102,59 155,91 169,119"/><circle class="pj-z-star" cx="25" cy="42" r="3.5" style="animation-delay:-0s"/><circle class="pj-z-star" cx="102" cy="59" r="2.7" style="animation-delay:-1s"/><circle class="pj-z-star" cx="155" cy="91" r="2.7" style="animation-delay:-2s"/><circle class="pj-z-star" cx="169" cy="119" r="3.5" style="animation-delay:-3s"/></svg>
 </div>
 <!-- END: two decorative constellations -->
+<style>
+/* 三組星座各自緩慢漂浮 */
+.pj-gemini-stars {
+  animation: pj-constellation-float 12s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.pj-z-pisces {
+  animation: pj-constellation-float 15s ease-in-out infinite;
+  animation-delay: -7s;
+}
+
+.pj-z-aries {
+  animation: pj-constellation-float 17s ease-in-out infinite;
+  animation-delay: -11s;
+}
+
+@keyframes pj-constellation-float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(4px, -10px);
+  }
+}
+
+/* 配合裝置的減少動態設定 */
+@media (prefers-reduced-motion: reduce) {
+  .pj-gemini-stars,
+  .pj-z-pisces,
+  .pj-z-aries {
+    animation: none;
+  }
+}
+</style>
 </html>
